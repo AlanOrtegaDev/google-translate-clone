@@ -8,7 +8,11 @@ const authKey = process.env.DEEPL_API_KEY
 const translator = new deepl.Translator(authKey)
 
 app
-  .use(cors('*'))
+  .use(
+    cors({
+      origin: 'https://google-translate-clone-brown.vercel.app',
+    })
+  )
   .use(express.json())
   .use(express.urlencoded({ extended: true }))
 
