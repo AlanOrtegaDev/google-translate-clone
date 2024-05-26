@@ -1,10 +1,12 @@
 import express from 'express'
 import * as deepl from 'deepl-node'
 import cors from 'cors'
+import { config } from 'dotenv'
+config()
 
 const app = express()
 const port = process.env.PORT || 4000
-const authKey = process.env.DEEPL_API_KEY
+const authKey = process.env.DEEPL_API_KEY || ''
 const translator = new deepl.Translator(authKey)
 
 app
