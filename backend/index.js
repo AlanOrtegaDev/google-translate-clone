@@ -17,6 +17,8 @@ app
   .use(express.urlencoded({ extended: true }))
 
 app.post('/translate', async (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*')
+
   const { text, targetLang, sourceLang } = req.body
 
   try {
