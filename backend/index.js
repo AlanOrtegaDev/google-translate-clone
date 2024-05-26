@@ -8,7 +8,7 @@ const authKey = process.env.DEEPL_API_KEY
 const translator = new deepl.Translator(authKey)
 
 app
-  .use(cors())
+  .use(cors('*'))
   .use(express.json())
   .use(express.urlencoded({ extended: true }))
 
