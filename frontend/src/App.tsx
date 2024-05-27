@@ -26,7 +26,8 @@ function App() {
   const debounced = useDebouncedCallback(async () => {
     const response: APIResponse = await translate({
       text: fromText,
-      sourceLang: fromLanguage === AUTO_LANGUAGE ? null : fromLanguage,
+      sourceLang:
+        fromLanguage === AUTO_LANGUAGE ? null : fromLanguage.slice(0, 2),
       targetLang: toLanguage,
     })
 

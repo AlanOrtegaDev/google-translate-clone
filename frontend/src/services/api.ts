@@ -8,7 +8,12 @@ interface Props {
 
 export const translate = async ({ text, sourceLang, targetLang }: Props) => {
   try {
-    const res = await $axios.post('https://google-translate-clone-server.vercel.app/translate', {
+    // const res = await $axios.post('https://google-translate-clone-server.vercel.app/translate', {
+    //   text,
+    //   sourceLang,
+    //   targetLang,
+    // })
+    const res = await $axios.post('http://localhost:4000/translate', {
       text,
       sourceLang,
       targetLang,
